@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platformer Game</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Additional specific styles for element 6 can go here if needed */
+        /* Ensure the dropdown menu styles are consistent */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 40px; /* Adjust the top position to create space */
+            left: -10px; /* Adjust the left position if needed */
+            background-color: #333;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            width: 200px; /* Adjust width as needed */
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            text-align: left;
+        }
+
+        nav ul ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul ul li a:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Platformer Game</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li>
+                    <a href="#">Elements</a>
+                    <ul class="dropdown">
+                        <li><a href="element1.html">Element 1</a></li>
+                        <li><a href="element2.html">Element 2</a></li>
+                        <li><a href="element3.html">Element 3</a></li>
+                        <li><a href="element4.html">Element 4</a></li>
+                        <li><a href="element5.html">Element 5</a></li>
+                        <li><a href="element6.html">Element 6</a></li>
+                    </ul>
+                </li>
+                <li><a href="../documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Platformer Game. The cube is only able to move certain direction only when its jumping</h2>
+            <!-- Babylon.js canvas -->
+            <canvas id="renderCanvas"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Game Studio. All rights reserved.</p>
+    </footer>
+
+    <!-- Babylon.js script -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/cannon.js"></script>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <!-- Babylon.js code for the scene -->
+    <script src="../scripts/element6.js"></script>
+</body>
+</html>

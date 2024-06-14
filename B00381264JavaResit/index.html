@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Interactive BabylonJS Scenes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General reset and basic styles */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Navigation styles */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            display: block;
+            text-align: left;
+        }
+
+        nav ul ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul ul li a:hover {
+            background-color: #444;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        main section {
+            margin-bottom: 40px;
+        }
+
+        main h2 {
+            margin-bottom: 10px;
+        }
+
+        main ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        main ul li {
+            margin-bottom: 10px;
+        }
+
+        main ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        main ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My BabylonJS Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#">Elements</a>
+                    <ul class="dropdown" id="elements-dropdown">
+                        <li><a href="babylon-elements/element1.html">Element 1</a></li>
+                        <li><a href="babylon-elements/element2.html">Element 2</a></li>
+                        <li><a href="babylon-elements/element3.html">Element 3</a></li>
+                        <li><a href="babylon-elements/element4.html">Element 4</a></li>
+                        <li><a href="babylon-elements/element5.html">Element 5</a></li>
+                        <li><a href="babylon-elements/element6.html">Element 6</a></li>
+                    </ul>
+                </li>
+                <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>Hi! I'm Makar. I created this website with my demonstration of babylon.js</p>
+        </section>
+        <section>
+            <h2>Interactive Scenes</h2>
+            <ul>
+                <li><a href="babylon-elements/element1.html">Basic Shapes, Lighting, and Motion</a></li>
+                <li><a href="babylon-elements/element2.html">3D Environment with Textures and Terrain</a></li>
+                <li><a href="babylon-elements/element3.html">Movable Player Mesh with Animations</a></li>
+                <li><a href="babylon-elements/element4.html">GUI with Menu and Transitions</a></li>
+                <li><a href="babylon-elements/element5.html">Switchable Scenes</a></li>
+                <li><a href="babylon-elements/element6.html">Main Game</a></li>
+                
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Makar Klyuev. All rights reserved.</p>
+    </footer>
+</body>
+</html>

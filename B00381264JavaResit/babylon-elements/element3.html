@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element 3 - Movement with physics</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Additional specific styles for element 1 can go here if needed */
+        /* Ensure the dropdown menu styles are consistent */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 40px; /* Adjust the top position to create space */
+            left: -10px; /* Adjust the left position if needed */
+            background-color: #333;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            width: 200px; /* Adjust width as needed */
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            text-align: left;
+        }
+
+        nav ul ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul ul li a:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Element 3 - Movable Player Mesh with Animations</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li>
+                    <a href="#">Elements</a>
+                    <ul class="dropdown">
+                        <li><a href="element1.html">Element 1</a></li>
+                        <li><a href="element2.html">Element 2</a></li>
+                        <li><a href="element3.html">Element 3</a></li>
+                        <li><a href="element4.html">Element 4</a></li>
+                        <li><a href="element5.html">Element 5</a></li>
+                    </ul>
+                </li>
+                <li><a href="../documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Cube Movement</h2>
+            <p>This page demonstrates a controlable cube with physics.</p>
+            <!-- Your Babylon.js canvas and script should be included here -->
+            <canvas id="renderCanvas"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Makar Klyuev. All rights reserved.</p>
+    </footer>
+
+    <canvas id="renderCanvas"></canvas>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script> <!-- Babylon.js library -->
+    <script src="https://cdn.babylonjs.com/cannon.js"></script> <!-- Cannon.js for physics -->
+    <script src="../scripts/element3.js"></script> <!-- Your Babylon.js script -->
+</body>
+</html>
