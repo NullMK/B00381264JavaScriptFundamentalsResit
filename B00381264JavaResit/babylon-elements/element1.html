@@ -73,6 +73,7 @@
                         <li><a href="element3.html">Element 3</a></li>
                         <li><a href="element4.html">Element 4</a></li>
                         <li><a href="element5.html">Element 5</a></li>
+                        <li><a href="element6.html">Element 5</a></li>
                     </ul>
                 </li>
                 <li><a href="../documentation.html">Documentation</a></li>
@@ -85,6 +86,12 @@
             <p>This page demonstrates basic shapes, lighting, and motion using Babylon.js.</p>
             <!-- Your Babylon.js canvas and script should be included here -->
             <canvas id="renderCanvas"></canvas>
+            <!-- Background audio -->
+            <audio id="backgroundAudio" loop>
+                <source src="../audio/backgroundMusic.wav" type="audio/mpeg">
+                Your browser does not support the audio element. 
+            </audio>
+            <button id="muteButton">Mute Audio</button>
         </section>
     </main>
     <footer>
@@ -95,5 +102,27 @@
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <!-- Babylon.js code for the scene -->
     <script src="../scripts/element1.js"></script>
+    <!-- Background audio control script -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const backgroundAudio = document.getElementById('backgroundAudio');
+            const muteButton = document.getElementById('muteButton');
+            let isAudioMuted = false;
+
+            // Play audio when the page loads
+            backgroundAudio.play();
+
+            muteButton.addEventListener('click', function () {
+                isAudioMuted = !isAudioMuted;
+                if (isAudioMuted) {
+                    backgroundAudio.pause();
+                    muteButton.textContent = 'Unmute Audio';
+                } else {
+                    backgroundAudio.play();
+                    muteButton.textContent = 'Mute Audio';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

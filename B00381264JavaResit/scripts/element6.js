@@ -2,6 +2,9 @@ window.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('renderCanvas');
     const engine = new BABYLON.Engine(canvas, true);
 
+    // Get the jump sound audio element
+    const jumpSound = document.getElementById('jumpSound');
+
     let scene, camera, light, player, platforms = [];
     let isGameRunning = false;
     let isAudioMuted = false;
@@ -133,6 +136,11 @@ window.addEventListener('DOMContentLoaded', function () {
                 // Check if the player is on the ground (y <= 1.1) to allow jumping
                 if (gameScene.inputStates[' '] && player.position.y <= 1.1) {
                     player.physicsImpostor.applyImpulse(new BABYLON.Vector3(0, jumpHeight, 0), player.getAbsolutePosition());
+                    // Play jump sound
+                    if (!isAudioMuted) {
+                        jumpSound.currentTime = 0;
+                        jumpSound.play();
+                    }
                 }
 
                 // Check if the player has reached the goal platform
