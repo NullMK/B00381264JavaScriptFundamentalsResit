@@ -3,83 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Element 4 - GUI test</title>
+    <title>Element 4 - GUI with Menu and Transitions</title>
+    <!-- Link to your custom styles and Bootstrap CSS -->
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Additional specific styles for element 1 can go here if needed */
-        /* Ensure the dropdown menu styles are consistent */
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        nav ul li {
-            display: inline-block;
-            position: relative;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        nav ul ul {
-            display: none;
-            position: absolute;
-            top: 40px; /* Adjust the top position to create space */
-            left: -10px; /* Adjust the left position if needed */
-            background-color: #333;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            width: 200px; /* Adjust width as needed */
-        }
-
-        nav ul li:hover > ul {
-            display: block;
-        }
-
-        nav ul ul li {
-            text-align: left;
-        }
-
-        nav ul ul li a {
-            display: block;
-            padding: 10px 15px;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        nav ul ul li a:hover {
-            background-color: #444;
-        }
+        /* Additional specific styles for element 4 can go here if needed */
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Element 4 - GUI with Menu and Transitions</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li>
-                    <a href="#">Elements</a>
-                    <ul class="dropdown">
-                        <li><a href="element1.html">Element 1</a></li>
-                        <li><a href="element2.html">Element 2</a></li>
-                        <li><a href="element3.html">Element 3</a></li>
-                        <li><a href="element4.html">Element 4</a></li>
-                        <li><a href="element5.html">Element 5</a></li>
-                        <li><a href="element6.html">Element 6</a></li>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="elementsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Elements
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="elementsDropdown">
+                                <a class="dropdown-item" href="element1.html">Element 1</a>
+                                <a class="dropdown-item" href="element2.html">Element 2</a>
+                                <a class="dropdown-item" href="element3.html">Element 3</a>
+                                <a class="dropdown-item" href="element4.html">Element 4</a>
+                                <a class="dropdown-item" href="element5.html">Element 5</a>
+                                <a class="dropdown-item" href="element6.html">Element 6</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../documentation.md">Documentation</a>
+                        </li>
                     </ul>
-                </li>
-                <li><a href="../documentation.html">Documentation</a></li>
-            </ul>
+                </div>
+            </div>
         </nav>
     </header>
+    
     <main>
         <section>
             <h2>GUI test</h2>
@@ -94,18 +58,20 @@
             <button id="muteButton">Mute Audio</button>
         </section>
     </main>
+    
     <footer>
         <p>&copy; 2024 Makar Klyuev. All rights reserved.</p>
     </footer>
 
-    <!-- Babylon.js script -->
+    <!-- Bootstrap JS and Babylon.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/cannon.js"></script>
     <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
-
-    <!-- Babylon.js code for the scene -->
-    <script src="../scripts/element4.js"></script>
-
+    <script src="../scripts/element4.js"></script> <!-- Your Babylon.js script -->
+    
     <!-- Background audio control script -->
     <script>
         window.addEventListener('DOMContentLoaded', function () {

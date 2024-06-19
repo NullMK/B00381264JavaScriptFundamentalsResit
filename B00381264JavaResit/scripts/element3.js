@@ -53,7 +53,9 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
             // Movement based on keyboard input
-            const playerSpeed = 0.1;
+            const playerSpeed = 0.2;
+            const angularImpulse = 0.55; // Adjust this value to control the tilt speed
+
             if (scene.inputStates['w'] && player) {
                 player.physicsImpostor.applyImpulse(player.forward.scale(playerSpeed), player.getAbsolutePosition());
             }
@@ -62,13 +64,15 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             if (scene.inputStates['a'] && player) {
                 player.physicsImpostor.applyImpulse(player.right.scale(-playerSpeed), player.getAbsolutePosition());
+                player.rotation.y -= angularImpulse; // Apply angular impulse manually
             }
             if (scene.inputStates['d'] && player) {
                 player.physicsImpostor.applyImpulse(player.right.scale(playerSpeed), player.getAbsolutePosition());
+                player.rotation.y += angularImpulse; // Apply angular impulse manually
             }
 
             // Jumping logic
-            const jumpHeight = 6.0;
+            const jumpHeight = 2.0;
             if (scene.inputStates[' '] && player.physicsImpostor && player.position.y <= 0.6) {
                 player.physicsImpostor.applyImpulse(new BABYLON.Vector3(0, jumpHeight, 0), player.getAbsolutePosition());
             }

@@ -22,7 +22,7 @@ The website consists of the following main components:
 
 1. **Home Page (`index.html`)**: The landing page of the portfolio website.
 2. **Interactive Scenes**: A collection of HTML pages, each featuring a different BabylonJS scene.
-3. **Documentation Page**: This Markdown document converted to HTML for easy viewing.
+3. **Documentation Page (`documentation.html`)**: This Markdown document converted to HTML for easy viewing.
 
 ### Home Page
 
@@ -88,8 +88,10 @@ Below is the `index.html` file content:
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+```
 
-// Function to create the basic scene
+Function to Create Basic Scene
+// JavaScript code snippet for creating a basic scene
 const createBasicScene = function () {
     // Create a new BabylonJS scene
     const scene = new BABYLON.Scene(engine);
@@ -112,7 +114,10 @@ const createBasicScene = function () {
 
     return scene;
 };
-// Function to create the environment scene
+
+
+Function to Create Environment Scene
+// JavaScript code snippet for creating an environment scene
 const createEnvironmentScene = function () {
     // Create a new BabylonJS scene
     const scene = new BABYLON.Scene(engine);
@@ -137,7 +142,181 @@ const createEnvironmentScene = function () {
 
     return scene;
 };
-// Function to create the player scene
+
+Function to Create Menu Scene
+// JavaScript code snippet for creating a menu scene
+const createMenuScene = function () {
+    // Create a new BabylonJS scene
+    const menuScene = new BABYLON.Scene(engine);
+
+    // Create and position a FreeCamera
+    const menuCamera = new BABYLON.FreeCamera('menuCamera', new BABYLON.Vector3(0, 0, -10), menuScene);
+
+    // Create a hemispheric light
+    const menuLight = new BABYLON.HemisphericLight('menuLight', new BABYLON.Vector3(0, 1, 0), menuScene);
+
+    // Create a fullscreen UI for the menu
+    const advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI('UI', true, menuScene);
+
+    // Create a play button
+    const playButton = BABYLON.GUI.Button.CreateSimpleButton('playButton', 'Play Game');
+    playButton.width = '200px';
+    playButton.height = '50px';
+    playButton.color = 'white';
+    playButton.background = 'green';
+    playButton.onPointerUpObservable.add(function () {
+        // Transition to the main game scene when the button is clicked
+        engine.stopRenderLoop();
+        createMainGameScene();
+    });
+    advancedTexture.addControl(playButton);
+
+    // Render loop to continuously render the scene
+    engine.runRenderLoop(function () {
+        menuScene.render();
+    });
+
+    return menuScene;
+};
+
+
+Certainly! Continuing from where we left off, here are more sections for the documentation.md file including code snippets, contact information, and placeholders for screenshots:
+
+markdown
+
+// Continued from previous markdown
+
+### Function to Create Player Scene (continued)
+
+```javascript
+// Add keyboard controls to move the player
+scene.onKeyboardObservable.add((kbInfo) => {
+    switch (kbInfo.type) {
+        case BABYLON.KeyboardEventTypes.KEYDOWN:
+            if (kbInfo.event.key === 'w') {
+                player.position.z -= 0.1;
+            }
+            if (kbInfo.event.key === 's') {
+                player.position.z += 0.1;
+            }
+            if (kbInfo.event.key === 'a') {
+                player.position.x -= 0.1;
+            }
+            if (kbInfo.event.key === 'd') {
+                player.position.x += 0.1;
+            }
+            break;
+    }
+});
+
+// Render loop to continuously render the scene
+engine.runRenderLoop(function () {
+    scene.render();
+});
+
+return scene;
+};
+
+Function to Create Menu Scene
+
+javascript
+
+// JavaScript code snippet for creating a menu scene
+const createMenuScene = function () {
+    // Create a new BabylonJS scene
+    const menuScene = new BABYLON.Scene(engine);
+
+    // Create and position a FreeCamera
+    const menuCamera = new BABYLON.FreeCamera('menuCamera', new BABYLON.Vector3(0, 0, -10), menuScene);
+
+    // Create a hemispheric light
+    const menuLight = new BABYLON.HemisphericLight('menuLight', new BABYLON.Vector3(0, 1, 0), menuScene);
+
+    // Create a fullscreen UI for the menu
+    const advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI('UI', true, menuScene);
+
+    // Create a play button
+    const playButton = BABYLON.GUI.Button.CreateSimpleButton('playButton', 'Play Game');
+    playButton.width = '200px';
+    playButton.height = '50px';
+    playButton.color = 'white';
+    playButton.background = 'green';
+    playButton.onPointerUpObservable.add(function () {
+        // Transition to the main game scene when the button is clicked
+        engine.stopRenderLoop();
+        createMainGameScene();
+    });
+    advancedTexture.addControl(playButton);
+
+    // Render loop to continuously render the scene
+    engine.runRenderLoop(function () {
+        menuScene.render();
+    });
+
+    return menuScene;
+};
+
+How to Run the Game
+
+To view and interact with the scenes, simply click on the links provided under the "Interactive Scenes" section on the home page. Ensure your browser supports WebGL for optimal performance.
+Code Snippets
+
+Here are some code snippets showcasing key functionalities of the BabylonJS scenes.
+Function to Create Basic Scene
+
+// JavaScript code snippet for creating a basic scene
+const createBasicScene = function () {
+    // Create a new BabylonJS scene
+    const scene = new BABYLON.Scene(engine);
+
+    // Create and position an ArcRotateCamera
+    const camera = new BABYLON.ArcRotateCamera('camera', Math.PI / 2, Math.PI / 4, 20, new BABYLON.Vector3(0, 1, 0), scene);
+    camera.attachControl(canvas, true);
+
+    // Create a hemispheric light
+    const light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0, 1, 0), scene);
+
+    // Create a sphere and position it
+    const sphere = BABYLON.MeshBuilder.CreateSphere('sphere', { diameter: 2 }, scene);
+    sphere.position.y = 1;
+
+    // Render loop to continuously render the scene
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+
+    return scene;
+};
+
+Function to Create Environment Scene
+// JavaScript code snippet for creating an environment scene
+const createEnvironmentScene = function () {
+    // Create a new BabylonJS scene
+    const scene = new BABYLON.Scene(engine);
+
+    // Create and position an ArcRotateCamera
+    const camera = new BABYLON.ArcRotateCamera('camera', Math.PI / 2, Math.PI / 4, 20, new BABYLON.Vector3(0, 1, 0), scene);
+    camera.attachControl(canvas, true);
+
+    // Create a hemispheric light
+    const light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0, 1, 0), scene);
+
+    // Create a ground mesh and apply a texture
+    const ground = BABYLON.MeshBuilder.CreateGround('ground', { width: 50, height: 50 }, scene);
+    const groundMaterial = new BABYLON.StandardMaterial('groundMaterial', scene);
+    groundMaterial.diffuseTexture = new BABYLON.Texture('textures/grass.jpg', scene);
+    ground.material = groundMaterial;
+
+    // Render loop to continuously render the scene
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+
+    return scene;
+};
+
+Function to Create Player Scene
+// JavaScript code snippet for creating a player scene
 const createPlayerScene = function () {
     // Create a new BabylonJS scene
     const scene = new BABYLON.Scene(engine);
@@ -180,7 +359,9 @@ const createPlayerScene = function () {
 
     return scene;
 };
-// Function to create the menu scene
+
+Function to Create Menu Scene
+// JavaScript code snippet for creating a menu scene
 const createMenuScene = function () {
     // Create a new BabylonJS scene
     const menuScene = new BABYLON.Scene(engine);
@@ -214,3 +395,28 @@ const createMenuScene = function () {
 
     return menuScene;
 };
+
+
+Function to Create Main Game Scene
+// JavaScript code snippet for creating the main game scene
+const createMainGameScene = function () {
+    // Create a new BabylonJS scene
+    const scene = new BABYLON.Scene(engine);
+
+    // Create and position an ArcRotateCamera
+    const camera = new BABYLON.ArcRotateCamera('camera', Math.PI / 2, Math.PI / 4, 20, new BABYLON.Vector3(0, 1, 0), scene);
+    camera.attachControl(canvas, true);
+
+    // Create a hemispheric light
+    const light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0, 1, 0), scene);
+
+    // Create game elements here...
+
+    // Render loop to continuously render the scene
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+
+    return scene;
+};
+
