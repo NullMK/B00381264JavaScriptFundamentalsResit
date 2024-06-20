@@ -180,12 +180,6 @@ const createMenuScene = function () {
 };
 
 
-Certainly! Continuing from where we left off, here are more sections for the documentation.md file including code snippets, contact information, and placeholders for screenshots:
-
-markdown
-
-// Continued from previous markdown
-
 ### Function to Create Player Scene (continued)
 
 ```javascript
