@@ -89,7 +89,7 @@ Below is the `index.html` file content:
 </body>
 </html>
 ```
-
+```javascript
 Function to Create Basic Scene
 // JavaScript code snippet for creating a basic scene
 const createBasicScene = function () {
@@ -114,8 +114,8 @@ const createBasicScene = function () {
 
     return scene;
 };
-
-
+```
+```javascript
 Function to Create Environment Scene
 // JavaScript code snippet for creating an environment scene
 const createEnvironmentScene = function () {
@@ -142,7 +142,8 @@ const createEnvironmentScene = function () {
 
     return scene;
 };
-
+```
+```javascript
 Function to Create Menu Scene
 // JavaScript code snippet for creating a menu scene
 const createMenuScene = function () {
@@ -178,9 +179,9 @@ const createMenuScene = function () {
 
     return menuScene;
 };
+```
 
-
-### Function to Create Player Scene (continued)
+### Function to Create Player Scene
 
 ```javascript
 // Add keyboard controls to move the player
@@ -202,7 +203,9 @@ scene.onKeyboardObservable.add((kbInfo) => {
             break;
     }
 });
+```
 
+```javascript 
 // Render loop to continuously render the scene
 engine.runRenderLoop(function () {
     scene.render();
@@ -210,11 +213,10 @@ engine.runRenderLoop(function () {
 
 return scene;
 };
+```
 
-Function to Create Menu Scene
-
-javascript
-
+### Function to Create Menu Scene
+```javascript
 // JavaScript code snippet for creating a menu scene
 const createMenuScene = function () {
     // Create a new BabylonJS scene
@@ -249,15 +251,10 @@ const createMenuScene = function () {
 
     return menuScene;
 };
+```
 
-How to Run the Game
-
-To view and interact with the scenes, simply click on the links provided under the "Interactive Scenes" section on the home page. Ensure your browser supports WebGL for optimal performance.
-Code Snippets
-
-Here are some code snippets showcasing key functionalities of the BabylonJS scenes.
-Function to Create Basic Scene
-
+### Function to Create Basic Scene
+```javascript
 // JavaScript code snippet for creating a basic scene
 const createBasicScene = function () {
     // Create a new BabylonJS scene
@@ -281,8 +278,10 @@ const createBasicScene = function () {
 
     return scene;
 };
+```
 
-Function to Create Environment Scene
+### Function to Create Environment Scene
+```javascript
 // JavaScript code snippet for creating an environment scene
 const createEnvironmentScene = function () {
     // Create a new BabylonJS scene
@@ -308,8 +307,9 @@ const createEnvironmentScene = function () {
 
     return scene;
 };
-
-Function to Create Player Scene
+```
+### Function to Create Player Scene
+```javascript
 // JavaScript code snippet for creating a player scene
 const createPlayerScene = function () {
     // Create a new BabylonJS scene
@@ -353,8 +353,9 @@ const createPlayerScene = function () {
 
     return scene;
 };
-
-Function to Create Menu Scene
+```
+### Function to Create Menu Scene
+```javascript
 // JavaScript code snippet for creating a menu scene
 const createMenuScene = function () {
     // Create a new BabylonJS scene
@@ -389,9 +390,10 @@ const createMenuScene = function () {
 
     return menuScene;
 };
+```
 
-
-Function to Create Main Game Scene
+### Function to Create Main Game Scene
+```javascript
 // JavaScript code snippet for creating the main game scene
 const createMainGameScene = function () {
     // Create a new BabylonJS scene
@@ -413,4 +415,4 @@ const createMainGameScene = function () {
 
     return scene;
 };
-
+```
